@@ -1,0 +1,51 @@
+# Ядро
+/bitrix/
+
+# Контент
+/upload/
+
+# Кэш и временное
+/bitrix/cache/
+/bitrix/managed_cache/
+/bitrix/stack_cache/
+/bitrix/tmp/
+/bitrix/backup/
+
+# Секреты
+/.env
+/bitrix/.settings.php
+/bitrix/php_interface/dbconn.php
+/local/php_interface/dbconn.php
+
+# Логи
+*.log
+
+# Зависимости
+/vendor/
+/node_modules/
+
+# Vite-исходники (если это не часть шаблона)
+/src/
+/dist/
+
+# Мусор
+.DS_Store
+Thumbs.db
+*.swp
+*.bak
+
+/auth/
+/login/
+/search/
+/store/
+/news/
+/sect_bottom.php
+/sect_sidebar.php
+
+# Демо-файлы от поставки Битрикса
+/.bottom.menu.php
+/.left.menu_ext.php
+/.personal.menu.php
+/.section.php
+
+/images/

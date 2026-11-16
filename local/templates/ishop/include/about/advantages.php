@@ -1,0 +1,6 @@
+<div class="info-card"><div class="info-card__icon">💰</div><div class="info-card__title">Лучшие цены</div><div class="info-card__desc">Прямые поставки без посредников — цены на 15-30% ниже рынка</div></div>
+<div class="info-card"><div class="info-card__icon">✅</div><div class="info-card__title">Гарантия подлинности</div><div class="info-card__desc">Каждое устройство проходит проверку на оригинальность</div></div>
+<div class="info-card"><div class="info-card__icon">🛡️</div><div class="info-card__title">Гарантия 1 год</div><div class="info-card__desc">Бесплатный ремонт или замена в течение года</div></div>
+<div class="info-card"><div class="info-card__icon">📦</div><div class="info-card__title">Быстрая доставка</div><div class="info-card__desc">По Москве 1-2 дня, по России от 3 до 14 дней</div></div>
+<div class="info-card"><div class="info-card__icon">🔄</div><div class="info-card__title">Возврат 14 дней</div><div class="info-card__desc">Вернём деньги без вопросов в течение 14 дней</div></div>
+<div class="info-card"><div class="info-card__icon">👨‍💻</div><div class="info-card__title">Экспертная поддержка</div><div class="info-card__desc">Наши менеджеры — эксперты в технике Apple и Google</div></div>

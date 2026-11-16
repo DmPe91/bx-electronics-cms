@@ -1,0 +1,4 @@
+<div class="step"><div class="step__num">1</div><div class="step__title">Выбор товара</div><div class="step__desc">Выберите устройство в каталоге</div></div>
+<div class="step"><div class="step__num">2</div><div class="step__title">Оформление</div><div class="step__desc">Оформите заказ удобным способом</div></div>
+<div class="step"><div class="step__num">3</div><div class="step__title">Закупка</div><div class="step__desc">Закупаем и проверяем устройство</div></div>
+<div class="step"><div class="step__num">4</div><div class="step__title">Доставка</div><div class="step__desc">Доставляем в любой регион</div></div>
