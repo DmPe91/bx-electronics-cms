@@ -1,31 +1,31 @@
 <?php
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
-/** @var array $arParams */
-/** @var array $arResult */
-/** @var CBitrixComponent $component */
-
 $sectionId = (int)($arResult['VARIABLES']['SECTION_ID'] ?? 0);
+$sectionCode = $arResult['VARIABLES']['SECTION_CODE'] ?? '';
+
+// Если SECTION_ID пустой - попробуй получить из COMPONENT_PARAMS
+if ($sectionId <= 0 && !empty($component->arParams['SECTION_ID'])) {
+    $sectionId = (int)$component->arParams['SECTION_ID'];
+}
+
+// Отладка
+echo "<!-- Отладка: SECTION_ID={$sectionId}, SECTION_CODE={$sectionCode} -->";
+
 $pageTitle = 'Каталог';
-$pageSubtitle = 'Оригинальная техника Apple и Google с доставкой по России';
 if ($sectionId > 0) {
     $section = CIBlockSection::GetByID($sectionId)->GetNext();
     if ($section) {
         $pageTitle = $section['NAME'];
     }
 }
-if ($sectionId <= 0) {
-    $sectionId = 21; // 👈 ID раздела «Все товары»
-}
 ?>
-<div class="catalog-page__header container" style="margin-bottom:24px;">
-    <h1 style="font-size:28px;font-weight:700;color:#374151;margin-bottom:4px;">
-        <?= htmlspecialchars($pageTitle) ?>
-    </h1>
-    <?php if ($sectionId <= 0): ?>
-        <p style="color:#6b7280;"><?= htmlspecialchars($pageSubtitle) ?></p>
-    <?php endif; ?>
+
+
+<div class="catalog-page__header container">
+    <h1><?= htmlspecialchars($pageTitle) ?></h1>
 </div>
+
 <div class="catalog-page__layout container">
     <aside class="catalog-page__sidebar">
         <?php
@@ -35,15 +35,14 @@ if ($sectionId <= 0) {
             [
                 'IBLOCK_TYPE'     => $arParams['IBLOCK_TYPE'],
                 'IBLOCK_ID'       => $arParams['IBLOCK_ID'],
-                'SECTION_ID'      => $sectionId,
+                'SECTION_ID'      => $sectionId > 0 ? $sectionId : '',
+                'SECTION_CODE'    => $sectionCode,
                 'FILTER_NAME'     => $arParams['FILTER_NAME'],
                 'PRICE_CODE'      => ['BASE'],
                 'CACHE_TYPE'      => $arParams['CACHE_TYPE'],
                 'CACHE_TIME'      => $arParams['CACHE_TIME'],
-                'CACHE_GROUPS'    => $arParams['CACHE_GROUPS'],
                 'SAVE_IN_SESSION' => 'N',
-                'INSTANT_RELOAD'  => 'Y',
-                'AJAX_MODE'       => 'Y',
+                'INSTANT_RELOAD'  => 'N',
             ],
             $component
         );
@@ -52,25 +51,27 @@ if ($sectionId <= 0) {
 
     <div class="catalog-page__content">
         <?php
+        // Установим фильтр вручную если он пустой
+        if (empty($GLOBALS[$arParams['FILTER_NAME']])) {
+            $GLOBALS[$arParams['FILTER_NAME']] = ['ACTIVE' => 'Y'];
+        }
+        
         $APPLICATION->IncludeComponent(
             'bitrix:catalog.section',
             'custom',
             [
                 'IBLOCK_TYPE'           => $arParams['IBLOCK_TYPE'],
                 'IBLOCK_ID'             => $arParams['IBLOCK_ID'],
-                'SECTION_ID'            => $sectionId,
+                'SECTION_ID'            => $sectionId > 0 ? $sectionId : '',
+                'SECTION_CODE'          => $sectionCode,
                 'FILTER_NAME'           => $arParams['FILTER_NAME'],
                 'PAGE_ELEMENT_COUNT'    => '12',
-                'PROPERTY_CODE'         => ['BRAND_REF', 'SPECS', 'IS_NEW', 'IS_HIT', 'OLD_PRICE'],
-                'PRICE_CODE' => ['BASE'], // или $arParams['PRICE_CODE']
+                'PROPERTY_CODE'         => ['BRAND_REF', 'SPECS', 'IS_NEW', 'IS_HIT'],
+                'PRICE_CODE'            => ['BASE'],
                 'SHOW_OLD_PRICE'        => 'Y',
-                'SHOW_DISCOUNT_PERCENT' => 'Y',
-                'AJAX_MODE'             => 'Y',
-                'AJAX_OPTION_JUMP'      => 'N',
-                'AJAX_OPTION_HISTORY'   => 'Y',
+                'INCLUDE_SUBSECTIONS'   => 'Y',
                 'CACHE_TYPE'            => $arParams['CACHE_TYPE'],
                 'CACHE_TIME'            => $arParams['CACHE_TIME'],
-                'CACHE_GROUPS'          => $arParams['CACHE_GROUPS'],
             ],
             $component
         );

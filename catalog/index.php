@@ -8,9 +8,6 @@ $APPLICATION->SetTitle("Каталог");
     [
         "IBLOCK_TYPE"         => "catalog",
         "IBLOCK_ID"           => "6",
-        "AJAX_MODE"           => "Y",
-        "AJAX_OPTION_JUMP"    => "N",
-        "AJAX_OPTION_HISTORY" => "Y",
         "SEF_MODE"            => "Y",
         "SEF_FOLDER"          => "/catalog/",
         "SEF_URL_TEMPLATES"   => [
@@ -20,13 +17,21 @@ $APPLICATION->SetTitle("Каталог");
         ],
         "USE_FILTER"          => "Y",
         "FILTER_NAME"         => "arrFilter",
+        "FILTER_VIEW_MODE"    => "VERTICAL",
         "CACHE_TYPE"          => "A",
         "CACHE_TIME"          => "3600",
-        "CACHE_GROUPS"        => "N",
-        "SET_TITLE"           => "Y",
+        
+        // Добавь эти параметры:
+        "LIST_PROPERTY_CODE"  => ['BRAND_REF', 'SPECS', 'IS_NEW', 'IS_HIT'],
+        "LIST_PRICE_CODE"     => ['BASE'],
+        "LIST_DISPLAY_COMPARE" => "N",
+        "LIST_PAGE_ELEMENT_COUNT" => "12",
+        
+        "DETAIL_PROPERTY_CODE" => ['BRAND_REF', 'SPECS', 'IS_NEW', 'IS_HIT'],
+        "DETAIL_PRICE_CODE"    => ['BASE'],
+        
         "ADD_SECTION_CHAIN"   => "N",
         "ADD_ELEMENT_CHAIN"   => "N",
-		'PRICE_CODE' => ['BASE'],
     ],
     false
 );?>
