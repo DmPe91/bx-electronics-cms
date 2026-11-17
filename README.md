@@ -107,7 +107,7 @@ grid/flex. Контакты (телефон, email, адрес) хранятся
 
 ### Публичная часть
 
-![Главная страница](docs/main.png) ![(docs/main-2.png)]
+![Главная страница](docs/main.png)] !(docs/main-2.png)
 *Главная: хиты продаж, новинки, бренды, CTA. Все блоки — на `news.list` с кастомными шаблонами.*
 
 ![Каталог с фильтром](docs/catalog.png)
@@ -132,10 +132,10 @@ grid/flex. Контакты (телефон, email, адрес) хранятся
 ![Инфоблок «Электроника»](docs/info-catalog.png) ![(docs/info-catalog-2.png)]
 *Инфоблок «Электроника»: свойства `BRAND_REF` (привязка к брендам), `SPECS` (множественное), `IS_NEW`, `IS_HIT`, `OLD_PRICE`.*
 
-![Инфоблок «Бренды»](docs/info-brands.png) ![(docs/info-brands2.png)]
+![Инфоблок «Бренды»](docs/info-brands.png)] ![(docs/info-brands2.png)]
 *Инфоблок «Бренды»: элементы `Apple` и `Google`, привязанные к товарам через `BRAND_REF`.*
 
-![Результаты веб-форм](docs/form.png)
+![Результаты веб-форм (docs/form.png)]
 *Результаты веб-форм: заявка с формы «Контакты» сохранена в админке.*
 
 ![Режим правки](docs/banner-edit.png) ![(docs/catalog-edit.png)]
