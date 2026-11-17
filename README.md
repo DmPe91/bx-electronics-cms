@@ -107,37 +107,37 @@ grid/flex. Контакты (телефон, email, адрес) хранятся
 
 ### Публичная часть
 
-![Главная страница](docs/screenshots/main.png) ![(docs/screenshots/main-2.png)]
+![Главная страница](docs/main.png) ![(docs/main-2.png)]
 *Главная: хиты продаж, новинки, бренды, CTA. Все блоки — на `news.list` с кастомными шаблонами.*
 
-![Каталог с фильтром](docs/screenshots/catalog.png)
+![Каталог с фильтром](docs/catalog.png)
 *Каталог: `bitrix:catalog` с AJAX-фильтром. Слева — умный фильтр (бренд, цена, новизна, хит), справа — сетка `.product-card`.*
 
-![Каталог с применённым фильтром (docs/screenshots/catalog-filter-2.png)] ![(docs/screenshots/catalog-filter.png)]
+![Каталог с применённым фильтром (docs/catalog-filter-2.png)] ![(docs/catalog-filter.png)]
 *Применён фильтр «Apple»: список обновился без перезагрузки, в URL — параметры фильтра.*
 
-![Корзина](docs/screenshots/basket.png)
+![Корзина](docs/basket.png)
 *Корзина: кастомный шаблон `sale.basket.basket`, переверстан под `.cart-page` и `.cart-item`. Колонка «цена за 1 шт» удалена.*
 
-![Оформление заказа](docs/screenshots/order.png)
+![Оформление заказа](docs/order.png)
 *Оформление заказа через `sale.order.ajax` — форма с контактами, доставкой и оплатой.*
 
-![Контакты с формой](docs/screenshots/contacts.png)
+![Контакты с формой](docs/contacts.png)
 *Контакты: телефон/email/адрес из включаемых областей, форма — `bitrix:form.result.new` с кастомным шаблоном.*
 
-![Другие страницы (docs/screenshots/delivery.png)] ![(docs/screenshots/payment.png)]
+![Другие страницы (docs/delivery.png)] ![(docs/payment.png)]
 
 ### Администрирование
 
-![Инфоблок «Электроника»](docs/screenshots/info-catalog.png) ![(docs/screenshots/info-catalog-2.png)]
+![Инфоблок «Электроника»](docs/info-catalog.png) ![(docs/info-catalog-2.png)]
 *Инфоблок «Электроника»: свойства `BRAND_REF` (привязка к брендам), `SPECS` (множественное), `IS_NEW`, `IS_HIT`, `OLD_PRICE`.*
 
-![Инфоблок «Бренды»](docs/screenshots/info-brands.png) ![(docs/screenshots/info-brands2.png)]
+![Инфоблок «Бренды»](docs/info-brands.png) ![(docs/info-brands2.png)]
 *Инфоблок «Бренды»: элементы `Apple` и `Google`, привязанные к товарам через `BRAND_REF`.*
 
-![Результаты веб-форм](docs/screenshots/form.png)
+![Результаты веб-форм](docs/form.png)
 *Результаты веб-форм: заявка с формы «Контакты» сохранена в админке.*
 
-![Режим правки](docs/screenshots/banner-edit.png) ![(docs/screenshots/catalog-edit.png)]
+![Режим правки](docs/banner-edit.png) ![(docs/catalog-edit.png)]
 
 ## 📂 Структура проекта
